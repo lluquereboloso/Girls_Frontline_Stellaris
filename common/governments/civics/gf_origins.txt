@@ -1,0 +1,31 @@
+origin_gf = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_mechanist.dds"
+	picture = GFX_origin_gf_commonwealth
+
+	playable = {
+	}
+
+	possible = {
+		authority = { value = auth_commonwealth }
+		species = {
+			value = newhum
+		}
+	}
+	description = "origin_tooltip_gf_effects"
+
+	has_secondary_species = {
+		title = origin_gf_species
+		traits = {
+			trait = trait_doll
+		}
+	}
+	traits = {
+			trait = trait_sequela
+	}
+	advanced_start = yes
+
+	random_weight = {
+		base = 0
+	}
+}

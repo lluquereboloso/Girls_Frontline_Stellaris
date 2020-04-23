@@ -1,0 +1,57 @@
+### RESOURCE DEFICITS
+sercurity_protocols = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_martial_law_machine.dds"
+	icon_frame = 2
+	planet_jobs_robotic_produces_mult = -0.50
+	tdoll_add = 3
+}
+storage_protocols = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_martial_law_machine.dds"
+	icon_frame = 2
+}
+corechip_deficit = {
+	planet_pop_assembly_mult = -10
+	planet_jobs_robotic_produces_mult = -10
+}
+at_work_governor = {
+	icon = "gfx/interface/icons/modifiers/mod_country_terraform_speed_mult.dds"
+	icon_frame = 3
+	country_unity_produces_mult = 0.15
+	pop_happiness = 0.1
+	planet_buildings_cost_mult = -0.15
+	planet_districts_cost_mult = -0.15
+                country_energy_produces_mult = -0.05
+}
+at_work_produce = {
+	icon = "gfx/interface/icons/modifiers/mod_country_terraform_speed_mult.dds"
+	icon_frame = 3
+	planet_jobs_robotic_produces_mult = 0.10
+                country_energy_produces_mult = -0.05
+}
+at_work_upkeep = {
+	icon = "gfx/interface/icons/modifiers/mod_country_terraform_speed_mult.dds"
+	icon_frame = 3
+	planet_pops_robotics_upkeep_mult = -0.10
+                country_energy_produces_mult = -0.05
+}
+at_work_war = {
+	icon = "gfx/interface/icons/modifiers/mod_country_terraform_speed_mult.dds"
+	icon_frame = 3
+	ship_weapon_damage = 0.1
+	ships_upkeep_mult = -0.15
+	army_damage_mult = 0.2
+	army_morale = 0.2
+	armies_upkeep_mult = -0.2
+                country_energy_produces_mult = -0.05
+}
+at_work_research = {
+	icon = "gfx/interface/icons/modifiers/mod_country_terraform_speed_mult.dds"
+	icon_frame = 3
+	all_technology_research_speed = 0.05
+	planet_jobs_physics_research_produces_mult = 0.05
+	planet_jobs_society_research_produces_mult = 0.05
+	planet_jobs_engineering_research_produces_mult = 0.05
+	science_ship_survey_speed = 0.15
+	ship_anomaly_research_speed_mult = 0.15
+                country_energy_produces_mult = -0.05
+}

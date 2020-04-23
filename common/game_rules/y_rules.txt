@@ -1,0 +1,234 @@
+#Tooltips will be generated from these rules when they fail. Use of custom_tooltip is recommended
+#There are still multiple hard-coded rules that apply in addition to these.
+#If rules here evaluate to true, there might still be other rules that make the action unavailable.
+#If a rule here evaluates to false the action will become unavailable
+#Root = planet
+#This = species
+species_can_live_on_planet = {
+	NAND = {
+		root = { is_planet_class = pc_machine }
+		NOR = {
+			has_trait = trait_machine_unit
+			has_trait = trait_mechanical
+		                has_trait = trait_doll
+			AND = {
+				has_trait = trait_cybernetic
+				exists = root.owner
+				root.owner = {
+					has_authority = auth_machine_intelligence
+					has_civic = civic_machine_assimilator # Assimilator empire
+				}
+			}
+		}
+	}
+	NAND = {
+		root = { is_planet_class = pc_hive }
+		NOT = { has_trait = trait_hive_mind }
+	}
+}
+#Root = country
+#This = pop
+can_generate_leader_from_pop = {
+	has_citizenship_rights = yes
+	NOT = { has_trait = trait_syncretic_proles }
+	NOT = { has_trait = trait_nerve_stapled }
+	OR = {
+		is_robot_pop = no
+		root = { has_technology = tech_mind_plus }
+		root = { has_technology = tech_synthetic_leaders }
+		root = { has_authority = auth_machine_intelligence }
+		root = { is_mechanical_empire = yes }
+	}
+}
+
+#Root = country
+#This = species
+can_generate_leader_from_species = {
+	is_sapient = yes
+	OR = {
+		NAND = {
+			NOT = { root = { has_technology = "tech_synthetic_leaders" } }
+			has_trait = "trait_mechanical"
+		}
+		has_citizenship_type = { type = citizenship_full country = root }
+	}
+}
+
+#Root = country
+#This = pop
+can_generate_military_leader_from_pop = {
+	can_be_military_leader = yes
+	OR = {
+		is_robot_pop = no
+		root = { has_technology = tech_synthetic_leaders }
+		root = { has_technology = tech_mind_plus }
+		root = { has_authority = auth_machine_intelligence }
+		root = { is_mechanical_empire = yes }
+	}
+}
+
+#Root = species
+#This = country
+can_release_vassal_from_species = {
+	root = {
+		is_sapient = yes
+		NOR = {
+			has_trait = trait_machine_unit
+			has_trait = trait_hive_mind
+			has_trait = trait_mechanical
+			has_trait = trait_nerve_stapled
+			has_trait = trait_doll
+		}
+	}
+}
+
+# Root = species
+# This = country
+can_generate_army_from_species = {
+	root = {
+		OR = {
+			has_military_service_type = { type = military_service_full country = prev }
+			has_military_service_type = { type = military_service_limited country = prev }
+		}
+	}
+}
+# Root = Species
+# From = Country
+# This = Species
+species_has_happiness = {
+	NOR = {
+		has_trait = trait_machine_unit
+		has_trait = trait_hive_mind
+		has_trait = trait_nerve_stapled
+		AND = {
+			has_trait = trait_mechanical
+			OR = {
+				NOT = { exists = from }
+				from = { has_authority = auth_machine_intelligence }
+				from = { NOT = { has_technology = tech_synthetic_workers } }
+				from = { has_policy_flag = ai_outlawed }
+			}
+		}
+		AND = {
+			has_trait = trait_cybernetic
+			exists = from
+			from = {
+				has_authority = auth_machine_intelligence
+				has_civic = civic_machine_assimilator # Assimilator empire
+			}
+		}
+	}
+}
+
+# Checks if a pop can procreate
+# This = Species
+# Root = Planet
+can_species_procreate = {
+	is_sapient = yes
+	NOR = {
+		has_trait = trait_machine_unit
+		has_trait = trait_mechanical
+		has_trait = trait_doll
+	}
+	NAND = {
+		root = { has_modifier = slave_colony }
+		NOT = { has_citizenship_type = { type = citizenship_slavery country = root.owner } }
+	}
+}
+
+# Checks if a pop can be assembled
+# This = Species
+# Root = Planet
+can_species_be_assembled = {
+	is_sapient = yes
+	OR = {
+		has_trait = trait_machine_unit
+		has_trait = trait_mechanical
+		has_trait = trait_doll
+	}
+}
+
+# This = country
+can_build_branch_offices = {
+	custom_tooltip = {
+		fail_text = BRANCH_OFFICE_NOT_MEGACORP
+		OR = {has_authority = auth_corporate
+                                           has_civic = civic_gk}
+	}
+}
+
+# This = country
+can_support_branch_offices = {
+	custom_tooltip = {
+		fail_text = BRANCH_OFFICE_NOT_FALLEN_EMPIRES
+		NOR = {
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
+	}
+	is_regular_empire = yes
+	NOT = { 		
+                             OR = {has_authority = auth_corporate
+                                        has_civic = civic_gk}
+                }
+}
+
+# This = planet
+# Root = country
+can_build_branch_office_on_planet = {
+	custom_tooltip = {
+		fail_text = requires_recipient_not_fanatic_purifiers
+		exists = owner
+		owner = {
+			OR = {
+				is_same_species = root
+				NOT = { has_civic = civic_fanatic_purifiers }
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = BRANCH_OFFICE_NOT_COMMERCIAL_PACT
+		exists = owner
+		OR = {
+			root = { is_criminal_syndicate = yes }
+			owner = { has_commercial_pact = root }
+			owner = { is_in_federation_with = root }
+
+			# allow branch offices in subsidiaries and vice versa
+			root = {
+				is_subject = yes
+				is_subject_type = subsidiary
+				overlord = { is_same_value = owner }
+			}
+			owner = {
+				is_subject = yes
+				is_subject_type = subsidiary
+				overlord = { is_same_value = root }
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = BRANCH_OFFICE_CRIMINAL_HERITAGE_HAS_TRUCE
+		exists = owner
+		OR = {
+			root = { is_criminal_syndicate = no }
+			owner = {
+				NOR = {
+					has_truce = root
+					is_at_war_with = root
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = BRANCH_OFFICE_CRIMINAL_COOLDOWN
+		exists = owner
+		OR = {
+			root = { is_criminal_syndicate = no }
+			AND = {
+				root = { is_criminal_syndicate = yes }
+				NOT = { has_planet_flag = criminal_branch_closed_cooldown_planet@root }
+			}
+		}
+	}
+}

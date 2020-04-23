@@ -1,0 +1,55 @@
+auth_ai_commonwealth = {
+                has_factions = no
+	has_heir = no
+	election_type = none
+	can_reform = no
+	playable = { has_global_flag = game_started }
+	icon = "interface/icons/governments/auth_ai_Military_Contractor.dds"
+	random_weight = {
+		modifier = {
+			factor = 0
+		}
+	}
+	country_modifier = {
+	    country_base_influence_produces_add = 1
+		country_admin_cap_add = 20
+		ship_fire_rate_mult = 0.25
+	}
+}
+auth_commonwealth = {
+                has_factions = no
+                can_reform = no
+	election_type = none
+	localization_postfix = corporate
+	has_agendas = yes
+	possible = {
+		ethics = {
+			NOR = {
+				value = ethic_gestalt_consciousness
+				value = ethic_spiritualist
+				value = ethic_fanatic_spiritualist
+			}
+		}
+	}	
+	playable = {
+		host_has_dlc = "Megacorp"
+	}
+	icon = "gfx/interface/icons/governments/GFGOV.dds"
+	random_weight = {
+		modifier = {
+			factor = 0
+		}
+	}
+	country_modifier = {
+	                country_base_influence_produces_add = 1
+		country_admin_cap_add = 10
+                                planet_pops_robotics_upkeep_mult = -0.05
+
+	}
+	traits = {
+		trait_sequela
+	}
+	tags = {
+		BE_APPOINTED_BY_PLAYER
+	}
+}

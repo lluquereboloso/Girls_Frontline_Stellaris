@@ -1,0 +1,188 @@
+d_south_pole_island = {
+	is_for_colonizeable = yes
+	
+	icon = d_crystalline_caverns
+	planet_modifier = { 
+		district_mining_max = 3
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+d_south_pole = {
+	is_for_colonizeable = yes
+	
+	icon = d_toxic_kelp
+	planet_modifier = { 
+		district_generator_max = 4
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+d_yellow_zone = {
+	is_for_colonizeable = yes
+	time = 270	
+	icon = d_slums
+	category = deposit_cat_blockers	
+	planet_modifier = { 
+		planet_max_districts_add = -1
+	}
+	on_cleared = {
+		create_pop = {
+			species = owner
+		}
+	}	
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 300
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+d_eild_zone = {
+	is_for_colonizeable = yes
+	time = 300	
+	icon = d_massive_glacier
+	category = deposit_cat_blockers	
+	planet_modifier = { 
+		planet_max_districts_add = -3
+	}
+	blocker_swap_types = {
+		d_relic_preservation
+	}	
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+		}
+	}
+	prerequisites = { "tech_dangerous_wildlife" }
+	drop_weight = {
+		weight = 0
+	}
+}
+d_doll_factory_ruin = {
+	is_for_colonizeable = yes
+	time = 120	
+	icon = d_city_ruins
+	category = deposit_cat_blockers	
+	planet_modifier = { 
+		planet_max_districts_add = -1
+	}
+	blocker_swap_types = {
+		d_doll_factory
+	}	
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 50
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+d_doll_factory = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare	
+	icon = d_building
+	planet_modifier = { 
+		job_assemblyman_add = 1
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+d_south_asia = {
+	is_for_colonizeable = yes
+	
+	icon = d_fertile_lands
+	planet_modifier = { 
+		district_farming_max = 4
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+d_amazon_farm = {
+	is_for_colonizeable = yes
+	
+	icon = d_fertile_lands
+	planet_modifier = { 
+		district_farming_max = 4
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+d_australia_ruin = {
+	is_for_colonizeable = yes
+	time = 270	
+	icon = d_organic_landfill
+	category = deposit_cat_blockers	
+	planet_modifier = { 
+		planet_max_districts_add = -1
+	}
+	use_weights_for_blocker_swap_types = no
+
+	blocker_swap_types = {
+		d_australia_mining
+	}	
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 300
+		}
+	}
+	drop_weight = {
+		weight = 0
+	}
+}
+d_australia_mining = {
+	is_for_colonizeable = yes
+	
+	icon = d_fertile_lands	
+	planet_modifier = { 
+		district_mining_max = 3
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+d_asia_europe = {
+	is_for_colonizeable = yes
+	
+	icon = d_fertile_lands	
+	planet_modifier = { 
+		district_mining_max = 2
+		district_generator_max = 4
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+d_relic_preservation = {
+	is_for_colonizeable = yes
+	category = deposit_cat_rare	
+	icon = d_monument	
+	planet_modifier = { 
+		planet_jobs_society_research_produces_mult = 0.1
+		planet_jobs_engineering_research_produces_mult = 0.1
+		planet_jobs_physics_research_produces_mult = 0.1
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

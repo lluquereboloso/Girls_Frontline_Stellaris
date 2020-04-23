@@ -1,0 +1,10 @@
+﻿l_simp_chinese:
+#################################
+ decision_gf_sodier:0 "激活人形安全协议"
+ decision_gf_sodier_desc:0 "当前星球陷入骚乱或外敌入侵时，政府将接管所有人形权限，开放相关暴力行为许可，传输基本战斗知识，分配武器，命令她们协助当地防卫"
+ decision_gf_sodier_end:0 "结束人形安全协议"
+ decision_gf_sodier_end_desc:0 "当前星球恢复正常，政府将收回人形的暴力行为许可，并将人形重新分配回各自工作岗位，继续原先生产任务"
+ decision_gf_dormancy:0 "休眠待机模式"
+ decision_gf_dormancy_desc:0 "允许当前星球上的无任务指派的人形进入人形维护仓中休眠待机，比正常状态下节省一半的维护费用"
+ decision_gf_activate:0 "唤醒激活待机人形"
+ decision_gf_activate_desc:0 "将待机状态的人形全部激活，对她们分配新的任务"

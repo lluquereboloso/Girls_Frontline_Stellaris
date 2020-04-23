@@ -1,0 +1,20 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_evt_ring_of_contract"
+		texturefile = "gfx/event_pictures/3gfevent.png"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_mind"
+		texturefile = "gfx/event_pictures/2gfevent.png"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_gfevent"
+		texturefile = "gfx/event_pictures/gfevent.png"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+}

@@ -1,0 +1,337 @@
+civic_rocksatlism = {
+	icon="gfx/interface/icons/governments/civics/rocksatlism.dds"
+	potential = { 
+                authority = { 
+	                     value = auth_commonwealth 
+					} 
+				}
+	possible={is_species_class = doll}
+	possible = {
+		ethics = {
+			NOR = {
+				value = ethic_authoritarian
+				value = ethic_fanatic_authoritarian
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_gk
+				value = civic_tech_city
+			}
+		}		
+	}
+	modifier={
+		pop_amenities_usage_mult = -0.10
+		pop_housing_usage_mult = -0.10
+		pop_citizen_happiness = 0.05
+	}
+	modification = no
+	description = "civic_rocksatlism_effects"
+	random_weight = {
+		base = 0
+	}
+}
+civic_tech_city={
+	icon="gfx/interface/icons/governments/civics/tech_city.dds"
+	potential = { 
+	authority = { 
+	                     OR = {
+	                value = auth_commonwealth
+		value = auth_ai_commonwealth
+						}
+					} 
+				}
+	modification = no
+	possible={is_species_class = doll}
+	possible = {
+		ethics = {
+			OR = {
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_gk
+				value = civic_rocksatlism
+			}
+		}		
+	}
+	random_weight={
+		base=0
+	}
+	description = "civic_tech_city_effects"
+	modifier={
+	}
+}
+civic_gk={
+	icon="gfx/interface/icons/governments/civics/gk.dds"
+	potential = { 
+	authority = { 
+	                     OR = {
+	                value = auth_commonwealth
+		value = auth_ai_commonwealth
+						}
+					} 
+				}
+	possible={is_species_class = doll}
+	possible = {
+		ethics = {
+			NOR = {
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+			}
+		}
+		civics = {
+			NOR = {
+				value = civic_tech_city
+				value = civic_rocksatlism
+			}
+		}		
+	}
+	random_weight={
+		base=0
+	}
+	description = "civic_gk_effects"
+	modification = no
+	modifier={
+		country_admin_cap_mult = -0.05
+	}
+}
+civic_fsb={
+	icon="gfx/interface/icons/governments/civics/fsb.dds"
+	potential = { 
+	authority = { 
+	                     OR = {
+	                value = auth_commonwealth 
+		value = auth_ai_commonwealth
+						}
+					}
+		civics = {
+			OR = {
+				value = civic_gk
+				value = civic_rocksatlism
+				value = civic_tech_city
+			}
+		} 
+				}
+	random_weight={
+		base=0
+	}	
+	modifier={
+		country_admin_cap_mult = 0.10
+		planet_stability_add = 5
+	}
+}
+civic_galaxy_force={
+	icon="interface/icons/governments/rocksatlism.dds"
+	potential = { 
+	authority = { 
+	                     OR = {
+	                value = auth_commonwealth
+		value = auth_ai_commonwealth
+						}
+					} 
+		civics = {
+			OR = {
+				value = civic_gk
+				value = civic_rocksatlism
+				value = civic_tech_city
+			}
+		}
+				}
+                possible={is_species_class = doll}
+	random_weight={
+		base=0
+	}	
+	modifier={
+		starbase_shipyard_build_cost_mult=-0.1
+		country_war_exhaustion_mult=-0.1
+		ship_weapon_damage=0.2
+		ship_fire_rate_mult = 0.10
+		admiral_skill_levels = 1
+		country_command_limit_add = 10
+	}
+}
+civic_extract_machine={
+	icon="gfx/interface/icons/governments/civics/extract_machine.dds"
+	potential = { 
+	authority = { 
+	                     OR = {
+	                value = auth_commonwealth 
+		value = auth_ai_commonwealth
+						}
+					} 
+		civics = {
+			OR = {
+				value = civic_gk
+				value = civic_rocksatlism
+				value = civic_tech_city
+			}
+		}
+				}
+	possible={is_species_class = doll}
+	random_weight={
+		base=0
+	}
+	modifier={
+                                 planet_miners_minerals_produces_add = 1
+                                 planet_technician_energy_produces_add = 1
+	}
+}
+civic_iop={
+	icon="gfx/interface/icons/governments/civics/iop.dds"
+	potential = { 
+	authority = { 
+	                     OR = {
+	                 value = auth_commonwealth  
+		 value = auth_ai_commonwealth 
+						}
+					} 
+		civics = {
+			OR = {
+				value = civic_gk
+				value = civic_rocksatlism
+				value = civic_tech_city
+			}
+		}
+				}
+	possible={is_species_class = doll}	
+	modification = no
+	random_weight={
+		base=0
+	}
+	
+	modifier={
+		country_base_corechip_produces_add = 1
+		planet_pop_assembly_mult = 0.15
+	}
+}
+civic_16lab={
+	icon="gfx/interface/icons/governments/civics/16lab.dds"
+	potential = { 
+	authority = { 
+	                     OR = {
+	                value = auth_commonwealth 
+		value = auth_ai_commonwealth 
+						}
+					} 
+		civics = {
+			OR = {
+				value = civic_gk
+				value = civic_rocksatlism
+				value = civic_tech_city
+			}
+		}
+				}
+	possible={is_species_class = doll}	
+	random_weight={
+		base=0
+	}
+	modifier={
+		all_technology_research_speed=0.1
+		num_tech_alternatives_add=1
+	}
+}
+civic_gosplan={
+	icon="gfx/interface/icons/governments/civics/gosplan.dds"
+	potential = { 
+	authority = { 
+	                     OR = {
+	                value = auth_commonwealth
+		value = auth_ai_commonwealth
+						}
+					} 
+		civics = {
+			OR = {
+				value = civic_gk
+				value = civic_rocksatlism
+				value = civic_tech_city
+			}
+		}
+				}
+	possible={is_species_class = doll}	
+	random_weight={
+		base=0
+	}
+	
+	modifier={
+                                country_alloys_produces_mult = 0.1
+		planet_pops_consumer_goods_upkeep_mult = -0.1
+	}
+}
+civic_functional_architecture = {
+	icon="gfx/interface/icons/governments/civics/functional_architecture.dds"
+	description = "civic_tooltip_functional_architecture_effects"
+	potential = { 
+	authority = { 
+	                     OR = {
+	                value = auth_commonwealth
+		value = auth_ai_commonwealth
+						}
+					} 
+		civics = {
+			OR = {
+				value = civic_gk
+				value = civic_rocksatlism
+				value = civic_tech_city
+			}
+		}
+				}
+	random_weight = { base = 0 }
+	possible={is_species_class = doll}
+	modifier = {
+		planet_structures_cost_mult = -0.10
+		planet_structures_upkeep_mult = -0.10
+	}
+}
+civic_fpc={
+	icon="gfx/interface/icons/governments/civics/fpc.dds"
+	potential = { 
+	authority = { 
+	                     OR = {
+	                value = auth_commonwealth
+		value = auth_ai_commonwealth
+						}
+					} 
+		civics = {
+			OR = {
+				value = civic_gk
+				value = civic_rocksatlism
+				value = civic_tech_city
+			}
+		}
+				}
+	possible={is_species_class = doll}
+	random_weight={
+		base=0
+	}
+	modifier={
+	                pop_growth_speed = 0.1
+	}
+}
+civic_wartime_footing={
+	icon="interface/icons/governments/grifen.dds"
+	potential = { 
+	authority = { 
+	                     OR = {
+	                value = auth_commonwealth
+		value = auth_ai_commonwealth
+						}
+					} 
+		civics = {
+			OR = {
+				value = civic_gk
+				value = civic_rocksatlism
+				value = civic_tech_city
+			}
+		}
+				}
+	possible={is_species_class = doll}
+	random_weight={
+		base=0
+	}
+	modifier={
+		army_damage_mult = 0.25
+	}
+}

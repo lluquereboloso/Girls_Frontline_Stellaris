@@ -1,0 +1,37 @@
+#############
+# dolll buildings
+#############
+building_doll_assembly_plant = {
+	icon = building_robot_assembly_plant
+	base_buildtime = 360
+
+	category = pop_assembly
+	
+	potential = {
+		owner = { has_authority = auth_commonwealth }
+	}
+	
+	planet_modifier = {
+		job_assemblyman_add = 1
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	
+	triggered_desc = {
+		text = job_assemblyman_effect_desc
+	}	
+	prerequisites = {
+		"tech_doll_assembly"
+	}
+	ai_weight = {
+		weight = 1
+	}
+}

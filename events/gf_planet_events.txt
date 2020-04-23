@@ -1,0 +1,41 @@
+namespace = gfplanet
+##########
+country_event = {
+	id = gfplanet.1
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_authority = auth_commonwealth
+	}
+	immediate = {
+		random_owned_planet = {
+			limit = { is_capital = yes }	
+                                clear_deposits = yes
+                                }
+		country_event = { id = gfplanet.2 }
+	}
+}
+country_event = {
+	id = gfplanet.2
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_authority = auth_commonwealth
+	}
+	immediate = {
+		random_owned_planet = {
+			limit = { is_capital = yes }	
+                                add_deposit = d_south_pole
+                                add_deposit = d_south_pole_island
+                                add_deposit = d_yellow_zone
+                                add_deposit = d_eild_zone
+                                add_deposit = d_doll_factory_ruin
+                                add_deposit = d_south_asia
+                                add_deposit = d_amazon_farm
+                                add_deposit = d_australia_ruin
+                                add_deposit = d_asia_europe
+                                add_deposit = d_relic_preservation
+                                }
+	}
+}
+ 

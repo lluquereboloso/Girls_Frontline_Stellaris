@@ -1,0 +1,343 @@
+namespace = gfleader
+country_event = {
+	id = gfleader.1
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		create_country = {
+			name = "NAME_Leader"
+			type = gf_ogas
+			flag = {
+				icon= {
+					category = "griffin"
+					file = "gf_ogas.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "sinus.dds"
+				}
+				colors={
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+		}
+		last_created_country = {
+			establish_communications_no_message = root
+			set_country_flag = ogas_country
+			save_global_event_target_as = ogas_country
+		}
+		save_global_event_target_as = ogas_owner
+	}
+}
+country_event = {
+	id = gfleader.2
+	hide_window = yes	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_owned_leader = {
+			limit = { leader_class = ruler }
+			set_leader_flag = ogas
+			save_global_event_target_as = ogas_leader
+		}
+		country_event = { id = gfleader.3 }
+		country_event = { id = gfleader.30001 }
+	}
+}
+country_event = {
+	id = gfleader.3
+	title = contact
+	desc = gfleader.3.desc
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:ogas_leader
+		room = ethic_griffin_room
+	}
+	is_triggered_only = yes
+	option = {
+		name = gfleader.3.a
+		hidden_effect = {
+			country_event = { id = gfleader.4 }
+		}
+	}
+	option = {
+		name = gfleader.3.b
+		hidden_effect = {
+			country_event = { id = gfleader.4 }
+		}
+	}
+}
+country_event = {
+	id = gfleader.30001
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+                                       country_event = { id = gfleader.1 }
+	}
+}
+country_event = {
+	id = gfleader.4
+	title = contact
+	desc = gfleader.4.desc
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:ogas_leader
+		room = ethic_griffin_room
+	}
+	is_triggered_only = yes
+	option = { 
+		name = gfleader.4.a
+		response_text = gfleader.4.a.response
+	}
+}
+# Main Menu (begin)
+country_event = {
+	id = gfleader.5
+	title = "connect"
+	desc = "gfleader.5.a.desc"
+	desc = "gfleader.5.b.desc"
+	desc = "gfleader.5.c.desc"	
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:ogas_leader
+		room = ethic_griffin_room
+	}
+	
+	is_triggered_only = yes
+
+	trigger = {
+		from = { is_country_type = gf_ogas }
+		NOT = { has_country_flag = contract_diplomacy_engaged }
+	}
+
+	immediate = {
+		set_country_flag = contract_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = contract_diplomacy_engaged }
+	}
+
+	trigger = {
+		from = { 
+                                              NOT = {has_country_flag = gray_country}
+                                }
+		is_same_value = event_target:ogas_owner
+	}
+	option = {
+		name = gfleader.5.a
+		trigger = {
+		                 NOT = { has_country_flag = gf_at_work }
+		}
+		hidden_effect = {
+			country_event = { id = gfleader.6 }
+		}
+	}
+	option = {
+		name = gfleader.5.b
+		trigger = {
+		                has_country_flag = gf_at_work
+		}
+                                is_dialog_only = yes
+		response_text = gfleader.5.b.response
+	}
+	option = {
+		name = gfleader.5.c
+		hidden_effect = {
+			country_event = { id = gfleader.7 }
+		}
+	}
+	option = {
+		name = gfleader.5.d
+		trigger = {
+		                 NOT = { has_country_flag = gf_at_chat }
+		}
+                                is_dialog_only = yes #临时
+		response_text = gfleader.5.e.response#临时
+#		hidden_effect = {
+#			country_event = { id = gfleader.8 }
+#		}
+	}
+	option = {
+		name = gfleader.5.e
+		trigger = {
+		                has_country_flag = gf_at_chat
+		}
+                                is_dialog_only = yes
+		response_text = gfleader.5.e.response
+	}
+	option = {
+		name = gfleader.5.f
+		response_text = gfleader.5.f.response
+	}
+}
+##working
+country_event = {
+	id = gfleader.6
+	title = "connect"
+	desc = "gfleader.6.a.desc"
+	desc = "gfleader.6.b.desc"
+	desc = "gfleader.6.c.desc"	
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:ogas_leader
+		room = ethic_griffin_room
+	}
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = gf_at_work }
+	}
+	option = { # un
+		name = gfleader.6.a
+		response_text = gfleader.6.a.response
+		set_timed_country_flag = { flag = gf_at_work days = 3560 }
+		add_modifier = {
+			modifier = "at_work_governor"
+			days = 3560
+		}
+	}
+	option = { # en
+		name = gfleader.6.b
+		response_text = gfleader.6.b.response
+		set_timed_country_flag = { flag = gf_at_work days = 3560 }
+		add_modifier = {
+			modifier = "at_work_produce"
+			days = 3600
+		}
+	}
+	option = { # mi fo
+		name = gfleader.6.c
+		response_text = gfleader.6.c.response
+		set_timed_country_flag = { flag = gf_at_work days = 3560 }
+		add_modifier = {
+			modifier = "at_work_upkeep"
+			days = 3600
+		}
+	}
+	option = { # un
+		name = gfleader.6.d
+		response_text = gfleader.6.d.response
+		set_timed_country_flag = { flag = gf_at_work days = 3560 }
+		add_modifier = {
+			modifier = "at_work_war"
+			days = 3600
+		}
+	}
+	option = { # un
+		name = gfleader.6.e
+		response_text = gfleader.6.e.response
+		set_timed_country_flag = { flag = gf_at_work days = 3560 }
+		add_modifier = {
+			modifier = "at_work_research"
+			days = 3600
+		}
+	}
+	option = {
+		name = gfleader.6.f
+		hidden_effect = {
+			country_event = { id = gfleader.5 }
+		}
+	}
+}
+# Main Menu (instruction)
+country_event = {
+	id = gfleader.7
+	title = "connect"
+	desc = "gfleader.7.a.desc"
+	desc = "gfleader.7.b.desc"
+	desc = "gfleader.7.c.desc"
+	diplomatic = yes	
+	picture_event_data = {
+		portrait = event_target:ogas_leader
+		room = ethic_griffin_room
+	}
+	
+	is_triggered_only = yes
+	option = { 
+		name = gfleader.7.a
+		response_text = gfleader.7.a.response
+                                is_dialog_only = yes
+	}
+	option = { 
+		name = gfleader.7.b
+		response_text = gfleader.7.b.response
+                                is_dialog_only = yes
+	}
+	option = { 
+		name = gfleader.7.c
+		response_text = gfleader.7.c.response
+                                is_dialog_only = yes
+	}
+	option = { 
+		name = gfleader.7.d
+		response_text = gfleader.7.d.response
+                                is_dialog_only = yes
+	}
+	option = { 
+		name = gfleader.7.e
+		response_text = gfleader.7.e.response
+                                is_dialog_only = yes
+	}
+	option = { 
+		name = gfleader.7.f
+		response_text = gfleader.7.f.response
+                                is_dialog_only = yes
+	}
+	option = {
+		name = gfleader.7.g
+		hidden_effect = {
+			country_event = { id = gfleader.5 }
+		}
+	}
+}
+#chat
+country_event = {
+	id = gfleader.8
+	title = "gfleader.8.title"
+	desc = "gfleader.8.a.desc"
+	desc = "gfleader.8.b.desc"
+	desc = "gfleader.8.c.desc"
+	desc = "gfleader.8.d.desc"
+	
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = event_target:ogas_leader
+		room = ethic_griffin_room
+	}	
+	is_triggered_only = yes
+	option = { 
+		name = gfleader.8.a
+		response_text = gfleader.4.a.response
+		set_timed_country_flag = { flag = gf_at_chat days = 3560 }
+		add_modifier = {
+			modifier = "at_work_pop_happiness"
+			days = 3560
+		}
+	}
+	option = { 
+		name = gfleader.8.b
+		response_text = gfleader.4.b.response
+		set_timed_country_flag = { flag = gf_at_chat days = 3560 }
+		add_modifier = {
+			modifier = "at_work_buildings_cost"
+			days = 3560
+		}
+	}
+	option = {
+		name = gfleader.4.d
+		hidden_effect = {
+			country_event = { id = gfleader.5 }
+		}
+	}
+}

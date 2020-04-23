@@ -1,0 +1,71 @@
+namespace = gfstart
+planet_event = {
+	id = gfstart.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		owner={has_authority = auth_commonwealth}
+	}
+	
+	immediate = {
+	set_country_flag = gf_commonwealth
+			while = {
+				count = 18
+				# replace pops instead of create new pops
+				random_pop = {
+					limit = { NOT = { is_same_species = last_created_species } }
+					change_species = last_created
+				}
+				#create_pop = {
+				#	species = last_created_species
+				#	ethos = random
+				#}
+			}
+                }
+}
+country_event = {
+	id = gfstart.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner={has_authority = auth_commonwealth}
+	}
+	immediate = {
+			give_technology = { message = no tech = tech_powered_exoskeletons }
+			give_technology = { message = no tech = tech_doll_assembly }
+		}
+}
+country_event = {
+	id = gfstart.3
+	hide_window = yes
+                is_triggered_only = yes
+	trigger = {
+		owner={has_authority = auth_commonwealth}
+	}	
+	immediate = {
+		every_owned_leader = {
+			limit = { leader_class = ruler }
+			remove_trait = leader_rulertrait_doll
+		}
+		every_owned_leader = {
+			limit = { leader_class = ruler }
+			add_trait = leader_ogas
+		}
+	}
+}
+country_event = {
+	id = gfstart.4
+	title = gfstart.4.name
+	desc = gfstart.4.desc
+	is_triggered_only = yes
+	trigger = {
+		has_authority = auth_commonwealth
+	}	
+	option = {
+		name = gfstart.4.a
+		hidden_effect = {
+			owner = { country_event = { id = gfleader.2 days = 3 } }
+		}
+	}
+}

@@ -1,0 +1,26 @@
+on_leader_spawned = {
+	events = {
+	                gftrait.1
+	                gftrait.2
+	                gftrait.3
+	                gftrait.4
+	}
+}
+empire_init_capital_planet = {
+	events = {
+		gfstart.1 
+	}
+}
+on_game_start_country = {
+	events = {
+		gfstart.2
+                                gfstart.3
+                                gfstart.4
+                                gfplanet.1
+	}
+}
+on_custom_diplomacy = {
+	events = {
+		gfleader.5
+	}
+}

@@ -1,0 +1,31 @@
+doll = {
+	archetype = android
+                robotic = yes
+	gender = no
+	use_climate_preference = no
+	portrait_modding = yes
+
+	portraits = {
+		"griffin"
+	}
+	non_randomized_portraits = {
+		"griffin"
+	}
+	leader_age_min = 1
+	leader_age_max = 5
+	graphical_culture = humanoid_01
+	move_pop_sound_effect = "robot_pops_move"
+	trait = "trait_doll"
+}
+newhum = {
+	archetype = BIOLOGICAL
+	portraits = {
+		"nhum"
+	}
+	non_randomized_portraits = {
+		"nhum"
+	}
+	graphical_culture = humanoid_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+	trait = "trait_sequela"
+}

@@ -1,0 +1,116 @@
+decision_gf_sodier = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_gf_nosodier
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	
+	potential = {
+		owner = {has_authority = auth_commonwealth}
+		NOT = { has_modifier = sercurity_protocols }
+		
+	}
+	
+	allow = {
+		NOT = { has_modifier = sercurity_protocols }
+	}	
+	
+	effect = {
+		add_modifier = { modifier = "sercurity_protocols" days = -1 }
+	}	
+	ai_weight = {
+		weight = 0
+	}
+}
+decision_gf_sodier_end = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_gf_nosodier_end
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 0
+		}
+	}
+	
+	potential = {
+		owner = {has_authority = auth_commonwealth}
+		has_modifier = sercurity_protocols
+		
+	}
+	
+	allow = {
+		has_modifier = sercurity_protocols
+	}	
+	
+	effect = {
+		remove_modifier = "sercurity_protocols"
+	}	
+	ai_weight = {
+		weight = 0
+	}
+}
+decision_gf_dormancy = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_gf_nosodier
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+	
+	potential = {
+		owner = {has_authority = auth_commonwealth}
+		NOT = { has_modifier = storage_protocols }
+		
+	}
+	
+	allow = {
+		NOT = { has_modifier = storage_protocols }
+	}	
+	
+	effect = {
+		add_modifier = { modifier = "storage_protocols" days = -1 }
+	}	
+	ai_weight = {
+		weight = 0
+	}
+}
+decision_gf_activate  = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_gf_nosodier_end
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 0
+		}
+	}
+	
+	potential = {
+		owner = {has_authority = auth_commonwealth}
+		has_modifier = storage_protocols
+		
+	}
+	
+	allow = {
+		has_modifier = storage_protocols
+	}	
+	
+	effect = {
+		remove_modifier = "storage_protocols"
+	}	
+	ai_weight = {
+		weight = 0
+	}
+}

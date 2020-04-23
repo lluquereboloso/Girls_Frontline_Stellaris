@@ -1,0 +1,74 @@
+tb_others_group = {
+	resources = {
+		volatile_motes
+		exotic_gases
+		rare_crystals
+		sr_living_metal
+		sr_zro
+		sr_dark_matter
+		nanites
+		corechip
+		#APSR - Anomalies, Planetary and Space Resources
+		apsr_knowledge
+		#ESC
+		esc_enigmatic_energy
+		esc_gravitic_anomaly
+		esc_living_crystal
+		esc_psionic_charge
+		esc_transdimensional_vortex
+		#Gigastructural Engineering & More
+		sr_iodizium
+		sr_solar_energy
+		#Gwen's Additional Play Styles
+		sr_GAPS_psychic_power
+		sr_GAPS_water
+		#Hypothetical Stars
+		sr_antimatter
+		sr_quark_gluon_plasma
+		sr_strange_matter
+		#I am grunt
+		able_bodied_recruit
+		basic_officer
+		basic_solider
+		kinetic_ammo
+		military_equipment
+		plate_armor
+		small_arms
+		#Mobile Suit Gundam Stellaris
+		cybernewtypes
+		efsf_pilots
+		efsf_ace_pilots		
+		luna_titanium
+		mobile_suits
+		newtypes
+		zeon_pilots
+		zeon_ace_pilots
+		#Stargate Universe
+		sr_ancient_zpm
+		#Star Wars Weapons (is getting updated)
+		kyber_crystals
+		tibanna_gas
+		#The Decadence of Sanity--An Expanded Feature on Shroud
+		yin
+		#The Zenith of Fallen Empires: Ancient Cache of Technology
+		acot_sr_dark_energy
+		acot_sr_light_matter
+		acot_sr_stellarite		
+		#Not released yet
+		ukn_neutronium
+		ukn_electroweak_matter
+		ukn_quasi_matter
+		ukn_exotic_matter
+		ukn_exions
+		ukn_e3z0
+		ukn_tachyons
+	}
+	localization = {
+		"RESOURCE_GROUP_DEFAULT" = default	
+		"RESOURCE_GROUP_DEFAULT_NEG_DEC" = { balance < 0 stored >= 1000 stored < 10000 }
+		"RESOURCE_GROUP_DEFAULT_NEG" = { balance < 0 }
+		"RESOURCE_GROUP_DEFAULT_MAX" = { max > 0 stored >= max }
+		"RESOURCE_GROUP_DEFAULT_DEC" = { stored >= 1000 stored < 10000 }
+	}
+	onclick = market
+}

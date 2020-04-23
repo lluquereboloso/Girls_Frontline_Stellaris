@@ -1,0 +1,217 @@
+##########gf_policy
+###
+gfdoll_right_policy = {
+	potential = {	
+		has_authority = auth_commonwealth
+	}
+	option = {
+		name = "gfdoll_right_policy_full"
+		modifier = {
+			Robot_pop_happiness = 0.05
+		}
+		valid = {
+		                has_technology = tech_mind_plus_1
+		}
+		policy_flags = {
+			gfdoll_right_full
+		}
+		AI_weight = {
+			factor = 0
+		}
+	                description = "full"
+	}	
+	option = {
+		name = "gfdoll_right_policy_high"
+		valid = {
+		                has_technology = tech_mind_plus
+		}		
+		modifier = {
+                                                  planet_pops_robotics_consumer_goods_upkeep_mult = -0.2
+                                                  planet_jobs_robotic_produces_mult = 0.05
+                                }
+		policy_flags = {
+			gfdoll_right_high
+		}		
+		AI_weight = {
+			factor = 1
+		}
+	                description = "full"
+	}
+	option = {
+		name = "gfdoll_right_policy_middle"
+		
+		modifier = {
+                                                  planet_pops_robotics_consumer_goods_upkeep_mult = -0.6
+                                }
+		policy_flags = {
+			gfdoll_right_middle
+		}		
+		AI_weight = {
+			factor = 1
+		}
+	                description = "full"
+	}
+	option = {
+		name = "gfdoll_right_policy_low"
+		
+		modifier = {
+                                                  planet_pops_robotics_consumer_goods_upkeep_mult = -10
+                                }
+		policy_flags = {
+			gfdoll_right_low
+		}		
+		AI_weight = {
+			factor = 1
+		}
+	                description = "full"
+	}		
+}
+gfdoll_work_policy = {
+	potential = {	
+		has_authority = auth_commonwealth
+	}
+	option = {
+		name = "gfdoll_work_policy_free"
+		modifier = {
+		}
+		valid = {
+                                                has_policy_flag = gfdoll_right_full
+		}
+		policy_flags = {
+			gfdoll_work_policy_free
+		}
+		AI_weight = {
+			factor = 0
+		}
+	                description = "full"
+	}	
+	option = {
+		name = "gfdoll_work_policy_high"
+		valid = {
+                                                has_policy_flag = gfdoll_right_high
+		}		
+		modifier = {
+                                }
+		policy_flags = {
+			gfdoll_work_policy_high
+		}		
+		AI_weight = {
+			factor = 1
+		}
+	                description = "full"
+	}
+	option = {
+		name = "gfdoll_work_policy_middle"
+		valid = {
+                                                OR = { 
+                                                            has_policy_flag = gfdoll_right_high 
+                                                            has_policy_flag = gfdoll_right_middle
+                                                }
+		}		
+		modifier = {
+                                }
+		policy_flags = {
+			gfdoll_work_policy_middle
+		}		
+		AI_weight = {
+			factor = 1
+		}
+	                description = "full"
+	}
+	option = {
+		name = "gfdoll_work_policy_low"	
+		valid = {
+                                                OR = { 
+                                                            has_policy_flag = gfdoll_right_high 
+                                                            has_policy_flag = gfdoll_right_middle
+                                                            has_policy_flag = gfdoll_right_low
+                                                }
+		}	
+		modifier = {
+                                }
+		policy_flags = {
+			gfdoll_work_policy_low
+		}		
+		AI_weight = {
+			factor = 1
+		}
+	                description = "full"
+	}		
+}
+gfrun_mode_policy = {
+	potential = {	
+		has_authority = auth_commonwealth
+	}
+	option = {
+		name = "gfrun_mode_policy_normal"
+		
+		modifier = {
+		}
+		valid = {
+                                             NOR = { has_policy_flag = gfdoll_right_low 
+                                                            has_policy_flag = gfdoll_right_middle}
+		}
+		policy_flags = {
+			gfrun_mode_policy_normal
+		}
+		AI_weight = {
+			factor = 0
+		}
+	                description = "full"
+	}
+	
+	option = {
+		name = "gfrun_mode_policy_energy"
+		
+		modifier = {
+                                                  planet_pops_robotics_upkeep_mult = -0.05
+                                }
+		valid = {
+                                             NOR = { has_policy_flag = gfdoll_right_low 
+                                                            has_policy_flag = gfdoll_right_full}
+		}
+		policy_flags = {
+			gfrun_mode_policy_energy
+		}		
+		AI_weight = {
+			factor = 0
+		}
+	                description = "full"
+	}		
+	option = {
+		name = "gfrun_mode_policy_food"
+		
+		modifier = {
+                                                  planet_pops_robotics_upkeep_mult = -0.1
+                                                  planet_pops_robotics_food_upkeep_mult = -10
+		}
+		valid = {
+                                             NOR = { has_policy_flag = gfdoll_right_full 
+                                                            has_policy_flag = gfdoll_right_high}
+		}
+		policy_flags = {
+			gfrun_mode_policy_food
+		}
+		AI_weight = {
+			factor = 0
+		}
+	                description = "full"
+	}
+	option = {
+		name = "gfrun_mode_policy_overload"
+		
+		modifier = {
+                                                  planet_pops_robotics_upkeep_mult = -0.15
+		}
+		valid = {
+                                             has_policy_flag = gfdoll_right_low
+		}
+		policy_flags = {
+			gfrun_mode_policy_overload
+		}
+		AI_weight = {
+			factor = 0
+		}
+	                description = "full"
+	}
+} 

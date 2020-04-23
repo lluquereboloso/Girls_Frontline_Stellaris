@@ -1,0 +1,81 @@
+tdoll = {
+	category = worker
+	is_capped_by_modifier = no
+	condition_string = WORKER_JOB_TRIGGER	
+	building_icon = building_stronghold
+	clothes_texture_index = 4
+	
+	country_modifier = {
+		country_naval_cap_add = 4
+	}
+	
+	pop_modifier = {
+		pop_defense_armies_add = 3
+		planet_stability_add = 2
+	}	
+	
+	resources = {
+		category = planet_soldiers
+		produces = {
+		}
+	}	
+	
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = { has_authority = auth_commonwealth }
+		owner = { is_regular_empire = yes }
+		planet = {has_modifier = sercurity_protocols}
+		has_trait = trait_doll
+	}
+	
+	weight = {
+		weight = @clerk_job_weight
+		modifier = {
+			factor = 0.
+			NOT = {planet = {has_modifier = sercurity_protocols}}
+			has_trait = trait_doll
+		}
+		modifier = {
+			factor = 10	
+			planet = { has_modifier = sercurity_protocols }
+			has_trait = trait_doll
+		}			
+	}
+}
+dormancy = {
+	category = worker
+	is_capped_by_modifier = no
+	condition_string = WORKER_JOB_TRIGGER	
+	building_icon = building_stronghold
+	clothes_texture_index = 4	
+	pop_modifier = {
+		planet_pops_upkeep_mult = -0.50
+	}		
+	resources = {
+		category = pop_category_robot
+		produces = {
+		}
+	}	
+	
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = { has_authority = auth_commonwealth }
+		owner = { is_regular_empire = yes }
+		planet = {has_modifier = storage_protocols}
+		has_trait = trait_doll
+	}
+	
+	weight = {
+		weight = @clerk_job_weight
+		modifier = {
+			factor = 0
+			NOT = {planet = {has_modifier = storage_protocols}}
+			has_trait = trait_doll
+		}
+		modifier = {
+			factor = 0.01	
+			planet = { has_modifier = sercurity_protocols }
+			has_trait = trait_doll
+		}			
+	}
+}

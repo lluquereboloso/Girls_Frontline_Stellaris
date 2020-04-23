@@ -1,0 +1,110 @@
+namespace = gftrait
+##########
+country_event = {
+	id = gftrait.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species = { has_trait = trait_doll }
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_admiraltrait_doll
+				set_gender = female
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_generaltrait_doll
+				set_gender = female
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_governortrait_doll
+				set_gender = female
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_scientisttrait_doll
+				set_gender = female
+				break = yes
+			}
+		}
+	}
+}
+country_event = {
+	id = gftrait.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species = { has_trait = trait_logical_subroutine }
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_scientisttrait_plus
+				break = yes
+			}
+		}
+	}
+}
+country_event = {
+	id = gftrait.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species = { has_trait = trait_tacticalchip }
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_admiraltrait_plus
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_generaltrait_plus
+				break = yes
+			}
+		}
+	}
+}
+country_event = {
+	id = gftrait.4
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species = { has_trait = trait_zener_protocol }
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_governortrait_plus
+				break = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+﻿l_simp_chinese:
+ GIRLF:0 "少女前线"
+############
+ mod_planet_pops_robotics_consumer_goods_upkeep_mult:0 "人形消费品（甜筒、巧克力、上网花费）维护"
+ mod_planet_pops_robotics_food_upkeep_mult:0 "人形口粮消耗"
+ mod_job_assemblyman_add:0 "人形技师岗位添加"
+ mod_job_programmer_add:0 "编程者岗位添加"
+ mod_job_liaison_add:0 "联络员岗位添加"
+ mod_country_base_corechip_produces_add:0 "基础每月核心芯片"
+ mod_country_corechip_produces_mult:0 "每月核心芯片"
+ mod_android_species_trait_points_add:0 "人形特质改造点数"

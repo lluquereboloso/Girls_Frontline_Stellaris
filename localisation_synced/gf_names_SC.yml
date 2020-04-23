@@ -1,0 +1,5 @@
+﻿l_simp_chinese:
+ NAME_Leader: "国家计算和信息处理自动化系统OGAS"
+ NAME_Gfteam:0 "[event_target:has_ring_of_contract_leader.GetName]小队"
+ NAME_gftactical_uav: "战术妖精"
+ NAME_gftactical_uavs: "战术妖精"
