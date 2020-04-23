@@ -1,0 +1,11 @@
+﻿l_simp_chinese:
+#################################country
+ at_work_governor:0 "社会管理模式"
+ at_work_produce:0 "经济统计模式"
+ at_work_upkeep:0 "人形运行管制模式"
+ at_work_war:0 "战略战术分析模式"
+ at_work_research:0 "科研辅助模式"
+ corechip_deficit:0 "芯片短缺"
+#################################planet
+ sercurity_protocols:0 "人形安全协议激活"
+ storage_protocols:0 "人形待机模式启用"

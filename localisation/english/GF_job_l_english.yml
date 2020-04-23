@@ -1,0 +1,20 @@
+﻿l_simp_chinese:
+#################################
+############
+ job_assemblyman_effect_desc:0 "添加一个人形技师"
+ job_assemblyman_plural:0 "人形技师"
+ job_assemblyman:0 "人形技师"
+ job_assemblyman_desc:0 "负责生产仿生人形的技术专家"
+ job_tdoll:0 "防卫人形"
+ job_tdoll_plural:0 "防卫人形"
+ job_tdoll_desc:0 "一个被紧急启用的防卫单位，被临时赋予了军事任务"
+ job_programmer_plural:0 "编程者"
+ job_programmer:0 "编程者"
+ job_programmer_desc:0 "编程者是最精英的技术人员，主要工作是生产、升级、创造心智云图"
+ job_dormancy:0 "待机人形"
+ job_dormancy_plural:0 "待机人形"
+ job_dormancy_desc:0 "应暂无任务而被储存并进入待机模式的人形，她们等待着新指令将她们唤醒"
+ job_liaison_effect_desc:0 "添加一个联络员"
+ job_liaison_plural:0 "联络员"
+ job_liaison:0 "联络员"
+ job_liaison_desc:0 "负责收发、传递齐纳网络信号信息的职位"
